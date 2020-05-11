@@ -13,19 +13,24 @@ function App() {
     { id: 4, nombre: 'Angular', precio: 20 },
   ]);
 
+  const[ carrito, agregarProducto ] = useState([]);
+
   //Obtener fecha
   const fecha = new Date().getFullYear();
 
   return (
     <Fragment>
       <Header 
-        titulo="Tienda Virtual"
+        titulo = "Tienda Virtual"
       />
       <h1>Lista de Productos</h1>
       {productos.map(producto=>(
         <Producto
-          key={ producto.id }
-          producto={ producto }
+          key = { producto.id }
+          producto = { producto }
+          carrito = { carrito }
+          productos = { productos }
+          agregarProducto = { agregarProducto }
         />
       ))}
       <Footer
